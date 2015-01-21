@@ -20,15 +20,23 @@ namespace NugetCreatorTest
         {
             IEnumerable<Cl_ProjectInfo> vrlPackages = GetProjectReferences();
 
-            Assert.AreEqual(1, vrlPackages.Count());
+            Assert.AreEqual(2, vrlPackages.Count());
         }
 
         [TestMethod]
-        public void Check_Package_ApplicationFrameSystemInterfaces()
+        public void Check_Package_SystemInterfaces()
         {
             IEnumerable<Cl_ProjectInfo> vrlPackages = GetProjectReferences();
 
-            Assert.IsTrue(vrlPackages.Any(p => p.Name == "ApplicationFrameSystemInterfaces"));
+            Assert.IsTrue(vrlPackages.Any(p => p.Name == "inSolutions.SystemInterfaces"));
+        }
+
+        [TestMethod]
+        public void Check_Package_Nexo()
+        {
+            IEnumerable<Cl_ProjectInfo> vrlPackages = GetProjectReferences();
+
+            Assert.IsTrue(vrlPackages.Any(p => p.Name == "inSolutions.Nexo"));
         }
     }
 }

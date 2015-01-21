@@ -15,6 +15,19 @@ namespace NugetCreatorTest
             return vrlPackagesFinder.GetPackages(new TextGetter().GetCsprojText());
         }
 
+        private Cl_ProjectInfo GetProjectInfo(string vrpProjectInfoName)
+        {
+            IEnumerable<Cl_ProjectInfo> vrlPackages = GetPackages();
+
+            Cl_ProjectInfo vrlProjectInfo = vrlPackages.SingleOrDefault(p => p.Name == vrpProjectInfoName);
+            if (vrlProjectInfo == null)
+            {
+                Assert.Fail("Nie znaleziono modułu " + vrpProjectInfoName);
+            }
+
+            return vrlProjectInfo;
+        }
+
         [TestMethod]
         public void Check_Packages_Quantity()
         {
@@ -24,27 +37,45 @@ namespace NugetCreatorTest
         }
 
         [TestMethod]
-        public void Check_Package_FluentMigrator()
+        public void Check_Existance_Of_Package_FluentMigrator()
         {
-            IEnumerable<Cl_ProjectInfo> vrlPackages = GetPackages();
-
-            Assert.IsTrue(vrlPackages.Any(p => p.Name == "FluentMigrator"));
+            Cl_ProjectInfo vrlProjectInfo = GetProjectInfo("FluentMigrator");
         }
 
         [TestMethod]
-        public void Check_Package_FluentMigratorRunner()
+        public void Check_Existance_Of_Package_FluentMigratorRunner()
         {
-            IEnumerable<Cl_ProjectInfo> vrlPackages = GetPackages();
-
-            Assert.IsTrue(vrlPackages.Any(p => p.Name == "FluentMigrator.Runner"));
+            Cl_ProjectInfo vrlProjectInfo = GetProjectInfo("FluentMigrator.Runner");
         }
 
         [TestMethod]
-        public void Check_Package_NLog()
+        public void Check_Existance_Of_Package_NLog()
         {
-            IEnumerable<Cl_ProjectInfo> vrlPackages = GetPackages();
+            Cl_ProjectInfo vrlProjectInfo = GetProjectInfo("NLog");
+        }
 
-            Assert.IsTrue(vrlPackages.Any(p => p.Name == "NLog"));
+        [TestMethod]
+        public void Check_Version_Of_Package_FluentMigrator()
+        {
+            Cl_ProjectInfo vrlProjectInfo = GetProjectInfo("FluentMigrator");
+
+            Assert.AreEqual("1.4.0.0", vrlProjectInfo.Version);
+        }
+
+        [TestMethod]
+        public void Check_Version_Of_Package_FluentMigratorRunner()
+        {
+            Cl_ProjectInfo vrlProjectInfo = GetProjectInfo("FluentMigrator.Runner");
+
+            Assert.AreEqual("1.4.0.0", vrlProjectInfo.Version);
+        }
+
+        [TestMethod]
+        public void Check_Version_Of_Package_NLog()
+        {
+            Cl_ProjectInfo vrlProjectInfo = GetProjectInfo("NLog");
+
+            Assert.AreEqual("3.2.0.0", vrlProjectInfo.Version);
         }
     }
 }

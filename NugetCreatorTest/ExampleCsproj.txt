@@ -391,6 +391,10 @@
       <Project>{fe0b037f-4552-41e3-b445-1b5bc2de3a18}</Project>
       <Name>inSolutions.SystemInterfaces</Name>
     </ProjectReference>
+	<ProjectReference Include="..\inSolutions.Nexo\inSolutions.Nexo.csproj">
+      <Project>{83a153de-7482-4a20-bd3e-66072c366043}</Project>
+      <Name>inSolutions.Nexo</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\inSolutions_ApplicationFrame.sql" />
