@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2012/06/nuspec.xsd">
+    <metadata>
+        <id>inSolutions.Utilities</id>
+        <version>1.0.1.8</version>
+        <title>Szkielet Aplikacji - Utilities</title>
+        <authors>Arkadiusz Neuman</authors>
+        <requireLicenseAcceptance>false</requireLicenseAcceptance>
+        <description>Szkielet Aplikacji dla programów firmy inSolutions.</description>
+        <language />
+        <dependencies>
+            <group targetFramework=".NETFramework4.0">
+                <dependency id="ApplicationFrameSystemInterfaces" version="[1.0.1.8]" />
+                <dependency id="NLog" version="3.2.0.0" />
+                <dependency id="FluentMigrator" version="1.4.0.0" />
+                <dependency id="FluentMigrator.Runner" version="1.4.0.0" />
+            </group>
+        </dependencies>
+    </metadata>
+    <files>
+        <file src="inSolutions.Utilities.1.0.1.8.dll" target="lib\net40\inSolutions.Utilities.1.0.1.8.dll" />
+        <file src="inSolutions.Utilities.1.0.1.8.xml" target="lib\net40\inSolutions.Utilities.1.0.1.8.xml" />
+    </files>
+</package>
