@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2013
 VisualStudioVersion = 12.0.31101.0
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NugetCreator", "NugetTest\NugetCreator.csproj", "{C87256F3-01E6-4841-B686-AFE79E63ED9A}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NugetCreator", "NugetCreator\NugetCreator.csproj", "{C87256F3-01E6-4841-B686-AFE79E63ED9A}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NugetCreatorTest", "NugetCreatorTest\NugetCreatorTest.csproj", "{847281BC-C632-4729-A8AA-ED6B7D061CBB}"
 EndProject
