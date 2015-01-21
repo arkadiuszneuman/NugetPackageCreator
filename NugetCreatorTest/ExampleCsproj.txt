@@ -1,0 +1,459 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{A5300D14-3356-4225-B304-0B0F07E9B752}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>inSolutions.Utilities</RootNamespace>
+    <AssemblyName>inSolutions.Utilities.1.0.1.8</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DocumentationFile>bin\Debug\inSolutions.Utilities.1.0.1.8.xml</DocumentationFile>
+    <NoWarn>1591</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DocumentationFile>bin\Release\inSolutions.Utilities.1.0.1.8.xml</DocumentationFile>
+    <NoWarn>1591</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationManifest>app.manifest</ApplicationManifest>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="DevExpress.BonusSkins.v14.1, Version=14.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Printing.v14.1.Core, Version=14.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Data.v14.1, Version=14.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Utils.v14.1, Version=14.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="DevExpress.XtraBars.v14.1, Version=14.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraEditors.v14.1, Version=14.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraPrinting.v14.1, Version=14.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraGrid.v14.1, Version=14.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraNavBar.v14.1, Version=14.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraTreeList.v14.1, Version=14.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraVerticalGrid.v14.1, Version=14.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="FluentMigrator">
+      <HintPath>..\packages\FluentMigrator.1.4.0.0\lib\40\FluentMigrator.dll</HintPath>
+    </Reference>
+    <Reference Include="FluentMigrator.Runner">
+      <HintPath>..\packages\FluentMigrator.Runner.1.4.0.0\lib\40\FluentMigrator.Runner.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="NLog, Version=3.2.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\NLog.3.2.0.0\lib\net40\NLog.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.Composition" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Design" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Transactions" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="WindowsBase" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AppearanceManager\Cl_AppearanceManager.cs" />
+    <Compile Include="AssemblyLoader\Cl_AssemblyLoader.cs" />
+    <Compile Include="Cl_ApplicationMethods.cs" />
+    <Compile Include="Cl_CommonBase.cs" />
+    <Compile Include="Cl_ComObjectManager.cs" />
+    <Compile Include="Cl_Connection.cs" />
+    <Compile Include="Cl_GridManager.cs" />
+    <Compile Include="Cl_Log.cs" />
+    <Compile Include="Cl_Manufacturer.cs" />
+    <Compile Include="Cl_Message.cs" />
+    <Compile Include="Cl_Messages.cs" />
+    <Compile Include="CommandLineArgumentsParser\Cl_CommandLineArgumentsParser.cs" />
+    <Compile Include="CommandLineArgumentsParser\CommandLineArgument\Cl_PasswordCommandLineArgument.cs" />
+    <Compile Include="CommandLineArgumentsParser\CommandLineArgument\Cl_UserCommandLineArgument.cs" />
+    <Compile Include="CommandLineArgumentsParser\CommandLineArgument\I_CommandLineArgument.cs" />
+    <Compile Include="CommandLineArgumentsParser\I_CommandLineArgumentsParser.cs" />
+    <Compile Include="Configuration\Cl_Config.cs" />
+    <Compile Include="Customer\Cl_CustomerSystem.cs" />
+    <Compile Include="DataAccess\Interface\I_Identifyable.cs" />
+    <Compile Include="DataAccess\Repository\I_Repository.cs" />
+    <Compile Include="DataAccess\Repository\I_RepositoryBase.cs" />
+    <Compile Include="DataAccess\Repository\I_RepositoryGuid.cs" />
+    <Compile Include="DataAccess\Repository\I_ViewRepository.cs" />
+    <Compile Include="DataAccess\Server\Cl_AllDatabasesLoader.cs" />
+    <Compile Include="DataAccess\Server\Cl_SqlServerConfiguration.cs" />
+    <Compile Include="DataAccess\UnitOfWork\I_UnitOfWork.cs" />
+    <Compile Include="DatabaseUpdate\FluentMigrator\Cl_FluentMigratorExtensions.cs" />
+    <Compile Include="DatabaseUpdate\FluentMigrator\Cl_NamespaceGetter.cs" />
+    <Compile Include="DatabaseUpdate\FluentMigrator\Cl_VersionSorter.cs" />
+    <Compile Include="DatabaseUpdate\FluentMigrator\Migrations\1.1\M201501071208_AddProgramRegistrationCurrentScriptsColumn.cs" />
+    <Compile Include="DatabaseUpdate\I_MigratorRunner.cs" />
+    <Compile Include="DynamicQueryCreator\BaseManager\ClM_DynamicQueryBaseManager.cs" />
+    <Compile Include="DynamicQueryCreator\I_QueryCreatorProperties.cs" />
+    <Compile Include="DynamicQueryCreator\Queries\Cl_DeleteByPrimaryQuery.cs" />
+    <Compile Include="DynamicQueryCreator\Queries\Cl_SaveUpdateQueryManager.cs" />
+    <Compile Include="DynamicQueryCreator\Queries\Cl_TypicalColumnManager.cs" />
+    <Compile Include="DataAccess\Interface\I_UserInsert.cs" />
+    <Compile Include="DataAccess\Interface\I_UserUpdate.cs" />
+    <Compile Include="DynamicQueryCreator\Cl_Column.cs" />
+    <Compile Include="DynamicQueryCreator\Cl_DynamicQueryBuilder.cs" />
+    <Compile Include="DynamicQueryCreator\Cl_DynamicQueryCreator.cs" />
+    <Compile Include="DynamicQueryCreator\Cl_QueryExecuter.cs" />
+    <Compile Include="DynamicQueryCreator\Fluent\Cl_DynamicColumnCreator.cs" />
+    <Compile Include="DynamicQueryCreator\Queries\Cl_LoadQuery.cs" />
+    <Compile Include="DynamicQueryCreator\Queries\Cl_NumericTypeChecker.cs" />
+    <Compile Include="DynamicQueryCreator\Queries\Cl_SaveQuery.cs" />
+    <Compile Include="DynamicQueryCreator\Queries\Cl_UpdateByPrimaryQuery.cs" />
+    <Compile Include="DataAccess\Interface\I_Active.cs" />
+    <Compile Include="DataAccess\Interface\I_UserId.cs" />
+    <Compile Include="EntityStateManager\CloneProvider\I_CloneProvider.cs" />
+    <Compile Include="EntityStateManager\CloneProvider\ReflectionCloneProvider\Cl_ReflectionCloneProvider.cs" />
+    <Compile Include="EntityStateManager\CloneProvider\ReflectionCloneProvider\Cl_ReflectionCollectionManager.cs" />
+    <Compile Include="EntityStateManager\CloneProvider\ReflectionCloneProvider\Cl_ReflectionPropertyChecker.cs" />
+    <Compile Include="EntityStateManager\CloneProvider\ReflectionCloneProvider\Cl_ReflectionPropertyGetter.cs" />
+    <Compile Include="EntityStateManager\CloneProvider\I_ObjectSystemStateManager.cs" />
+    <Compile Include="EntityStateManager\CloneProvider\ReflectionCloneProvider\Cl_UnitOfWorkReflectionObjectStateManager.cs" />
+    <Compile Include="EntityStateManager\CloneProvider\ReflectionCloneProvider\I_ReflectionObjectCollectionManager.cs" />
+    <Compile Include="EntityStateManager\CloneProvider\ReflectionCloneProvider\I_ReflectionPropertyChecker.cs" />
+    <Compile Include="EntityStateManager\CloneProvider\ReflectionCloneProvider\I_ReflectionPropertyGetter.cs" />
+    <Compile Include="EntityStateManager\Cl_EntityStateManager.cs" />
+    <Compile Include="EntityStateManager\I_EntityStateManager.cs" />
+    <Compile Include="ObjectStateManager\I_ObjectStateManager.cs" />
+    <Compile Include="EntityStateManager\Utilities\Cl_ItemStateNotSavedException.cs" />
+    <Compile Include="ExceptionHandler\Cl_NLogExceptionHandler.cs" />
+    <Compile Include="ExceptionHandler\I_ExceptionHandable.cs" />
+    <Compile Include="E_ObjectType.cs" />
+    <Compile Include="DatabaseUpdate\FluentMigrator\Cl_MigratorRunner.cs" />
+    <Compile Include="DatabaseUpdate\FluentMigrator\Cl_VersionTable.cs" />
+    <Compile Include="Initializer\Cl_HolidayChecker.cs" />
+    <Compile Include="Initializer\Cl_HolidaySkinSetter.cs" />
+    <Compile Include="Initializer\Cl_Initializer.cs" />
+    <Compile Include="Initializer\Cl_InitializerParameters.cs" />
+    <Compile Include="Initializer\Cl_DefaultSkinSetter.cs" />
+    <Compile Include="Initializer\E_DevExpressSkin.cs" />
+    <Compile Include="Initializer\I_CompanyInfo.cs" />
+    <Compile Include="InstalledAppsSearcher\I_InstalledAppsSearcher.cs" />
+    <Compile Include="I_Progress.cs" />
+    <Compile Include="License\Cl_LicenseChecker.cs" />
+    <Compile Include="License\Cl_LicenseInfo.cs" />
+    <Compile Include="License\Cl_VatNumberManager.cs" />
+    <Compile Include="MultiSystem\Interface\I_CustomerSystem.cs" />
+    <Compile Include="MultiSystem\Interface\I_UserSynchronizer.cs" />
+    <Compile Include="MultiSystem\Utilities\Cl_MultiSystemFactory.cs" />
+    <Compile Include="Privilege\Business\Cl_ManagerUtils.cs" />
+    <Compile Include="Privilege\Business\ClM_Privilege.cs" />
+    <Compile Include="Privilege\Business\ClM_PrivilegeGroup.cs" />
+    <Compile Include="Privilege\Business\ClM_Role.cs" />
+    <Compile Include="Privilege\Business\ClM_RolePrivilege.cs" />
+    <Compile Include="Privilege\Business\ClM_UserPrivilege.cs" />
+    <Compile Include="Privilege\Business\ClM_UserRole.cs" />
+    <Compile Include="Privilege\Entity\ClE_Privilege.cs" />
+    <Compile Include="Privilege\Entity\ClE_PrivilegeGroup.cs" />
+    <Compile Include="Privilege\Entity\ClE_Role.cs" />
+    <Compile Include="Privilege\Entity\ClE_RolePrivilege.cs" />
+    <Compile Include="Privilege\Entity\ClE_UserPrivilege.cs" />
+    <Compile Include="Privilege\Entity\ClE_UserRole.cs" />
+    <Compile Include="Privilege\Interface\I_PrivilegeManager.cs" />
+    <Compile Include="Privilege\Utilities\Cl_PrivilegeContainer.cs" />
+    <Compile Include="Privilege\Utilities\Cl_PrivilegeBase.cs" />
+    <Compile Include="Privilege\Utilities\Cl_PrivilegeChecker.cs" />
+    <Compile Include="Privilege\Utilities\Cl_PrivilegeException.cs" />
+    <Compile Include="Privilege\Utilities\Cl_PrivilegeGroupContainer.cs" />
+    <Compile Include="Privilege\Utilities\Cl_PrivilegeSync.cs" />
+    <Compile Include="Privilege\Utilities\Cl_RoleToPrivilegeMover.cs" />
+    <Compile Include="ProgramRegistration\Business\ClM_ProgramRegistration.cs" />
+    <Compile Include="ProgramRegistration\Cl_ProgramRegistration.cs" />
+    <Compile Include="ProgramRegistration\Entity\ClE_ProgramRegistration.cs" />
+    <Compile Include="ProgramRegistration\Entity\ClE_ProgramRegistrationHistory.cs" />
+    <Compile Include="InstalledAppsSearcher\Cl_InstalledApp.cs" />
+    <Compile Include="InstalledAppsSearcher\Cl_InstalledAppsSearcher.cs" />
+    <Compile Include="RegistrySearcher\Cl_RegistrySearcher.cs" />
+    <Compile Include="RegistrySearcher\Cl_WindowsRegistryKey.cs" />
+    <Compile Include="RegistrySearcher\I_RegistryKey.cs" />
+    <Compile Include="RegistrySearcher\I_RegistrySearcher.cs" />
+    <Compile Include="Scripts\Cl_AppFrameScript.cs" />
+    <Compile Include="Scripts\Cl_AppFrameScriptLauncher.cs" />
+    <Compile Include="Scripts\Cl_NexoScriptList.cs" />
+    <Compile Include="Cl_ProgramMessages.cs" />
+    <Compile Include="Cl_ProgramProperties.cs" />
+    <Compile Include="ExceptionHandler\Cl_EventLogHandler.cs" />
+    <Compile Include="ExceptionHandler\Cl_ExceptionHelper.cs" />
+    <Compile Include="ExceptionHandler\Cl_SimpleLogToFileHandler.cs" />
+    <Compile Include="ExceptionHandler\Cl_SimpleMessageBoxHandler.cs" />
+    <Compile Include="ExceptionHandler\Cl_StandardLog.cs" />
+    <Compile Include="Extension\Cl_Extensions.cs" />
+    <Compile Include="I_Common.cs" />
+    <Compile Include="I_Manufacturer.cs" />
+    <Compile Include="I_ProgramName.cs" />
+    <Compile Include="License\Cl_License.cs" />
+    <Compile Include="License\Cl_LicenseBase.cs" />
+    <Compile Include="License\Cl_LicenseNavireo.cs" />
+    <Compile Include="License\Cl_Utilities.cs" />
+    <Compile Include="License\E_LicenseError.cs" />
+    <Compile Include="License\E_LicenseVerification.cs" />
+    <Compile Include="NumberToTextConverter\ConversionAlghoritms\ClP_NumberConverterAlghoritm.cs" />
+    <Compile Include="NumberToTextConverter\ConversionAlghoritms\Cl_CurrencyConvertAlghoritm.cs" />
+    <Compile Include="NumberToTextConverter\Cl_CurrencyToTextConverter.cs" />
+    <Compile Include="NumberToTextConverter\Cl_Extensions.cs" />
+    <Compile Include="NumberToTextConverter\Cl_NumberToTextConverter.cs" />
+    <Compile Include="NumberToTextConverter\ConversionAlghoritms\I_CurrencyConvertAlghoritm.cs" />
+    <Compile Include="NumberToTextConverter\ConversionAlghoritms\I_NumberConverterAlghoritm.cs" />
+    <Compile Include="NumberToTextConverter\TextRepresentation\Cl_PolishRepresentationOfCurrencyCode.cs" />
+    <Compile Include="NumberToTextConverter\TextRepresentation\Cl_TextRepresentationOfNumbers.cs" />
+    <Compile Include="NumberToTextConverter\DigitConverter\Cl_FractionDigitRepresentation.cs" />
+    <Compile Include="NumberToTextConverter\DigitConverter\Cl_TextDigitRepresentation.cs" />
+    <Compile Include="NumberToTextConverter\DigitConverter\I_DigitConverter.cs" />
+    <Compile Include="NumberToTextConverter\TextRepresentation\I_TextRepresentationOfNumbers.cs" />
+    <Compile Include="NumberToTextConverter\TextRepresentation\I_TextRepresentationOfCurrencyCode.cs" />
+    <Compile Include="Parameter\Business\ClM_Parameter.cs" />
+    <Compile Include="Parameter\Business\ClM_ParameterValue.cs" />
+    <Compile Include="Parameter\ClM_Parameter.cs" />
+    <Compile Include="Parameter\ClE_Parameter.cs" />
+    <Compile Include="Parameter\Cl_ParameterBase.cs" />
+    <Compile Include="Parameter\Entity\ClE_Parameter.cs" />
+    <Compile Include="Parameter\Entity\ClE_ParameterEx.cs" />
+    <Compile Include="Parameter\Entity\ClE_ParameterValue.cs" />
+    <Compile Include="Parameter\Utilities\E_DefaultValueType.cs" />
+    <Compile Include="Parameter\Utilities\E_ParameterLevel.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Reflection\Cl_ReflectionManager.cs" />
+    <Compile Include="Cl_ResourceProvider.cs" />
+    <Compile Include="E_ConnectionType.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Reflection\Cl_DictionaryType.cs" />
+    <Compile Include="Reflection\I_DictionaryType.cs" />
+    <Compile Include="Scripts\Cl_ScriptEventArgs.cs" />
+    <Compile Include="Scripts\InsERTScripts.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>InsERTScripts.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Security\Cl_DataEncryption.cs" />
+    <Compile Include="Session\Cl_Blockade.cs" />
+    <Compile Include="Session\Cl_ObjectBlockedException.cs" />
+    <Compile Include="Session\Cl_Session.cs" />
+    <Compile Include="Session\Cl_SessionException.cs" />
+    <Compile Include="Session\Entity\ClE_Blockade.cs" />
+    <Compile Include="Session\Entity\ClE_Session.cs" />
+    <Compile Include="Session\Interface\I_ObjectBlocker.cs" />
+    <Compile Include="Session\Interface\I_Session.cs" />
+    <Compile Include="Session\Manager\ClM_Blockade.cs" />
+    <Compile Include="Session\Manager\ClM_Session.cs" />
+    <Compile Include="Sphere\Utilities\E_DocumentType.cs" />
+    <Compile Include="Sphere\Utilities\E_InsertSystem.cs" />
+    <Compile Include="Sphere\Cl_Sphere.cs" />
+    <Compile Include="Cl_DatabaseManager.cs" />
+    <Compile Include="User\Business\ClM_Attribute.cs" />
+    <Compile Include="User\Business\ClM_AttributeValue.cs" />
+    <Compile Include="User\Business\ClM_Feature.cs" />
+    <Compile Include="User\Business\ClM_Group.cs" />
+    <Compile Include="User\Business\ClM_InSolutionsUser.cs" />
+    <Compile Include="User\Business\ClM_SystemUser.cs" />
+    <Compile Include="User\Business\ClM_UserAttributeValue.cs" />
+    <Compile Include="User\Business\ClM_UserFeature.cs" />
+    <Compile Include="User\Business\Cl_UserSynchronizer.cs" />
+    <Compile Include="User\Cl_User.cs" />
+    <Compile Include="User\Cl_SystemUser.cs" />
+    <Compile Include="User\Entity\ClE_Attribute.cs" />
+    <Compile Include="User\Entity\ClE_AttributeEx.cs" />
+    <Compile Include="User\Entity\ClE_AttributeValue.cs" />
+    <Compile Include="User\Entity\ClE_AttributeValueEx.cs" />
+    <Compile Include="User\Entity\ClE_Group.cs" />
+    <Compile Include="User\Entity\ClE_Feature.cs" />
+    <Compile Include="User\Entity\ClE_InSolutionsUser.cs" />
+    <Compile Include="User\Entity\ClE_InSolutionsUserEx.cs" />
+    <Compile Include="User\Entity\ClE_SystemUser.cs" />
+    <Compile Include="User\Entity\ClE_SystemUserEx.cs" />
+    <Compile Include="User\Entity\ClE_UserAttributeValue.cs" />
+    <Compile Include="User\Entity\ClE_UserAttributeValueEx.cs" />
+    <Compile Include="User\Entity\ClE_UserFeature.cs" />
+    <Compile Include="User\Entity\ClE_UserFeatureEx.cs" />
+    <Compile Include="User\Interface\I_User.cs" />
+    <Compile Include="User\Interface\I_UserEntity.cs" />
+    <Compile Include="User\Interface\I_UsersLoader.cs" />
+    <Compile Include="User\Utilities\Cl_InSolutionsUserAuthorization.cs" />
+    <Compile Include="User\Utilities\Cl_InvalidAuthorizationCodeException.cs" />
+    <Compile Include="User\Utilities\Cl_NexoSynchronizer.cs" />
+    <Compile Include="User\Utilities\Cl_SubiektNaviSynchronizer.cs" />
+    <Compile Include="User\Utilities\Cl_SystemUserNotInitializedException.cs" />
+    <Compile Include="User\Utilities\Cl_UserNotInitializedException.cs" />
+    <Compile Include="User\Utilities\Cl_UserWithLoginNotFoundException.cs" />
+    <Compile Include="User\Utilities\I_LoginUser.cs" />
+    <Compile Include="Utilities\Cl_AppFrameVersionHelper.cs" />
+    <Compile Include="FontLoader\Cl_FontLoader.cs" />
+    <Compile Include="Utilities\Cl_LicensesToSave.cs" />
+    <Compile Include="Utilities\Cl_ProgramName.cs" />
+    <Compile Include="Scripts\Cl_InsERTScriptList.cs" />
+    <Compile Include="Scripts\E_ApplicationFrameScript.cs" />
+    <Compile Include="MultiSystem\Utilities\E_SystemType.cs" />
+    <Compile Include="Utilities\I_LicenseDetails.cs" />
+    <Compile Include="Scripts\I_ScriptList.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Scripts\InsERTScripts.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>InsERTScripts.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <COMReference Include="ADODB">
+      <Guid>{2A75196C-D9EB-4129-B803-931327F72D5C}</Guid>
+      <VersionMajor>2</VersionMajor>
+      <VersionMinor>8</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="InsERT">
+      <Guid>{F1E91071-83CC-4766-90BA-E038B005ACE5}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="app.manifest" />
+    <None Include="ClassDiagrams\inSolutions.Utilities.About.cd" />
+    <None Include="ClassDiagrams\inSolutions.Utilities.AppearanceManager.cd" />
+    <None Include="ClassDiagrams\inSolutions.Utilities.cd" />
+    <None Include="ClassDiagrams\inSolutions.Utilities.ExceptionHandler.cd" />
+    <None Include="ClassDiagrams\inSolutions.Utilities.Extension.cd" />
+    <None Include="ClassDiagrams\inSolutions.Utilities.Licence.cd" />
+    <None Include="ClassDiagrams\inSolutions.Utilities.NavireoBase.cd" />
+    <None Include="ClassDiagrams\inSolutions.Utilities.Parameter.cd" />
+    <None Include="ClassDiagrams\inSolutions.Utilities.Reflection.cd" />
+    <None Include="ClassDiagrams\inSolutions.Utilities.Security.cd" />
+    <None Include="ClassDiagrams\inSolutions.Utilities.SelectDatabase.cd" />
+    <None Include="ClassDiagrams\inSolutions.Utilities.Sphere.cd" />
+    <None Include="ClassDiagrams\inSolutions.Utilities.User.cd" />
+    <None Include="packages.config" />
+    <None Include="Properties\DataSources\inSolutions.Utilities.Login.Entity.ClE_User.datasource" />
+    <None Include="Properties\DataSources\inSolutions.Utilities.Login.Utilities.I_User.datasource" />
+    <None Include="Properties\DataSources\inSolutions.Utilities.MenuManager.Entity.ClE_Module.datasource" />
+    <None Include="Properties\DataSources\inSolutions.Utilities.MenuManager.Entity.ClE_ModuleTreeNode.datasource" />
+    <None Include="Properties\DataSources\inSolutions.Utilities.MenuManager.Entity.ClE_User.datasource" />
+    <None Include="Properties\DataSources\inSolutions.Utilities.SelectDatabase.Entity.ClE_Database.datasource" />
+    <None Include="Resources\realvista_webdesign_comparison_chart_48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\realvista_webdesign_comparison_chart_32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\realvista_text_switch_windows_32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\SzkieletAplikacji.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\SzkieletAplikacji.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\inSolutions.System\inSolutions.SystemInterfaces.csproj">
+      <Project>{fe0b037f-4552-41e3-b445-1b5bc2de3a18}</Project>
+      <Name>inSolutions.SystemInterfaces</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\inSolutions_ApplicationFrame.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\inSolutions_Attributes.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\inSolutions_Controls.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\inSolutions_Currency.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\inSolutions_Customer.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\inSolutions_Department.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\inSolutions_Dictionary.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\inSolutions_Document.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\inSolutions_FilesLibrary.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\inSolutions_ObjectCatalog.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\inSolutions_Product.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\inSolutions_Subgroup.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\inSolutions_Supergroup.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\inSolutions_Translation.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\inSolutions_Utilities.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\inSolutions_Warehouse.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="DataAccess\Utilities\" />
+    <Folder Include="EntityInterfaces\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>
+    </PostBuildEvent>
+  </PropertyGroup>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
