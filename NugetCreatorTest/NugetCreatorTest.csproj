@@ -53,6 +53,7 @@
     <Compile Include="AssemblyNameFinderTest.cs" />
     <Compile Include="CsprojTextGetter.cs" />
     <Compile Include="PackagesFinderTest.cs" />
+    <Compile Include="ProjectReferencesTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

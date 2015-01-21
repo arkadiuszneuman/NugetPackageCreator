@@ -59,7 +59,9 @@
   <ItemGroup>
     <Compile Include="CsprojFileFinder\DependencyFinder\Cl_AssemblyNameFinder.cs" />
     <Compile Include="CsprojFileFinder\FileTextFinder\Cl_FileTextFinder.cs" />
+    <Compile Include="CsprojFileFinder\Cl_ProjectInfo.cs" />
     <Compile Include="CsprojFileFinder\PackagesFinder\Cl_PackagesFinder.cs" />
+    <Compile Include="CsprojFileFinder\ProjectReferences\Cl_ProjectReferencesFinder.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -102,7 +104,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="CsprojFileFinder\AssemblyNameFinder\" />
-    <Folder Include="CsprojFileFinder\ProjectReferences\" />
     <Folder Include="NuspecCreator\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
