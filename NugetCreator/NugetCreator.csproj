@@ -57,19 +57,19 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="CsprojFileFinder\DependencyFinder\Cl_AssemblyNameFinder.cs" />
-    <Compile Include="CsprojFileFinder\FileTextFinder\Cl_FileTextFinder.cs" />
-    <Compile Include="CsprojFileFinder\Cl_ProjectInfo.cs" />
-    <Compile Include="CsprojFileFinder\PackagesFinder\Cl_PackagesFinder.cs" />
-    <Compile Include="CsprojFileFinder\ProjectReferences\Cl_ProjectReferencesFinder.cs" />
+    <Compile Include="NuspecCreator\CsprojFileFinder\AssemblyNameFinder\Cl_AssemblyNameFinder.cs" />
+    <Compile Include="NuspecCreator\CsprojFileFinder\FileTextFinder\Cl_FileTextFinder.cs" />
+    <Compile Include="NuspecCreator\CsprojFileFinder\Cl_ProjectInfo.cs" />
+    <Compile Include="NuspecCreator\CsprojFileFinder\PackagesFinder\Cl_PackagesFinder.cs" />
+    <Compile Include="NuspecCreator\CsprojFileFinder\ProjectReferences\Cl_ProjectReferencesFinder.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
-    <Compile Include="NuspecCreator\Cl_NuspecCreator.cs" />
-    <Compile Include="NuspecCreator\Cl_NuspecProjectInfo.cs" />
+    <Compile Include="NuspecCreator\NuspecXmlCreator\Cl_NuspecXmlCreator.cs" />
+    <Compile Include="NuspecCreator\NuspecXmlCreator\Cl_NuspecProjectInfo.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Form1.resx">
@@ -104,9 +104,7 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="CsprojFileFinder\AssemblyNameFinder\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

@@ -1,11 +1,10 @@
 ﻿using System.IO;
-using System.Windows.Forms.VisualStyles;
 using System.Xml.Linq;
-using NugetTest.CsprojFileFinder;
+using NugetTest.NuspecCreator.CsprojFileFinder;
 
-namespace NugetTest.NuspecCreator
+namespace NugetTest.NuspecCreator.NuspecXmlCreator
 {
-    public class Cl_NuspecCreator
+    public class Cl_NuspecXmlCreator
     {
         public string CreateNuspecText(Cl_NuspecProjectInfo vrpNuspecProjectInfo)
         {

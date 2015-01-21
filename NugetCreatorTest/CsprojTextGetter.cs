@@ -1,5 +1,5 @@
 ﻿using System.IO;
-using NugetTest.CsprojFileFinder.FileTextFinder;
+using NugetTest.NuspecCreator.CsprojFileFinder.FileTextFinder;
 
 namespace NugetCreatorTest
 {

@@ -1,8 +1,8 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using NugetTest.CsprojFileFinder;
-using NugetTest.CsprojFileFinder.ProjectReferences;
+using NugetTest.NuspecCreator.CsprojFileFinder;
+using NugetTest.NuspecCreator.CsprojFileFinder.ProjectReferences;
 
 namespace NugetCreatorTest
 {

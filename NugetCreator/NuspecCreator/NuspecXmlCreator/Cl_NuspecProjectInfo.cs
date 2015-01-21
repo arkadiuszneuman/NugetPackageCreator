@@ -1,8 +1,7 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using NugetTest.CsprojFileFinder;
+﻿using System.Collections.Generic;
+using NugetTest.NuspecCreator.CsprojFileFinder;
 
-namespace NugetTest.NuspecCreator
+namespace NugetTest.NuspecCreator.NuspecXmlCreator
 {
     public class Cl_NuspecProjectInfo
     {

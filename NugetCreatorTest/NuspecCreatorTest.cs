@@ -2,9 +2,9 @@
 using System.IO;
 using System.Text;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using NugetTest.CsprojFileFinder;
-using NugetTest.CsprojFileFinder.FileTextFinder;
-using NugetTest.NuspecCreator;
+using NugetTest.NuspecCreator.CsprojFileFinder;
+using NugetTest.NuspecCreator.CsprojFileFinder.FileTextFinder;
+using NugetTest.NuspecCreator.NuspecXmlCreator;
 
 namespace NugetCreatorTest
 {
@@ -46,7 +46,7 @@ namespace NugetCreatorTest
             Cl_NuspecProjectInfo vrlNuspecProjectInfo = CreateNuspecProjectInfo();
             string vrlValidNuspec = GetValidNuspec();
 
-            string vrlNuspecText = new Cl_NuspecCreator().CreateNuspecText(vrlNuspecProjectInfo);
+            string vrlNuspecText = new Cl_NuspecXmlCreator().CreateNuspecText(vrlNuspecProjectInfo);
 
             Assert.AreEqual(ExceptBlanks(vrlValidNuspec), ExceptBlanks(vrlNuspecText));
         }

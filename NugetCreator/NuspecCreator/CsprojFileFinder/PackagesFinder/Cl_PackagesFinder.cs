@@ -1,10 +1,9 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Xml.Linq;
 
-namespace NugetTest.CsprojFileFinder.PackagesFinder
+namespace NugetTest.NuspecCreator.CsprojFileFinder.PackagesFinder
 {
     public class Cl_PackagesFinder
     {

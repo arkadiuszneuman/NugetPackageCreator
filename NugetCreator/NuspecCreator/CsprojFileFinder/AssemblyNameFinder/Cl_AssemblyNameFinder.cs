@@ -2,7 +2,7 @@
 using System.Linq;
 using System.Xml.Linq;
 
-namespace NugetTest.CsprojFileFinder.DependencyFinder
+namespace NugetTest.NuspecCreator.CsprojFileFinder.AssemblyNameFinder
 {
     public class Cl_AssemblyNameFinder
     {

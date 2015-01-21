@@ -1,4 +1,4 @@
-namespace NugetTest.CsprojFileFinder
+namespace NugetTest.NuspecCreator.CsprojFileFinder
 {
     public class Cl_ProjectInfo
     {

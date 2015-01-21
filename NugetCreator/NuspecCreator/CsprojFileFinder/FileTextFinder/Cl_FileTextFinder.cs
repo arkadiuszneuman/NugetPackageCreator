@@ -1,6 +1,6 @@
 ﻿using System.IO;
 
-namespace NugetTest.CsprojFileFinder.FileTextFinder
+namespace NugetTest.NuspecCreator.CsprojFileFinder.FileTextFinder
 {
     public interface I_FileTextFinder
     {
