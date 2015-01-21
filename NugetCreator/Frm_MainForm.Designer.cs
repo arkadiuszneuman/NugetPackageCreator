@@ -1,6 +1,6 @@
 ﻿namespace NugetTest
 {
-    partial class Form1
+    partial class Frm_MainForm
     {
         /// <summary>
         /// Required designer variable.

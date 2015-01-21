@@ -1,5 +1,5 @@
 ﻿using System.IO;
-using NugetTest.NuspecCreator.CsprojFileFinder.FileTextFinder;
+using NugetTest.NuspecCreator.FileTextLoader;
 
 namespace NugetCreatorTest
 {
@@ -7,7 +7,7 @@ namespace NugetCreatorTest
     {
         public string GetCsprojText()
         {
-            return new Cl_FileTextFinder().GetTextFromFile(Path.Combine(Directory.GetCurrentDirectory(), "ExampleCsproj.txt"));
+            return new Cl_FileTextLoader().GetTextFromFile(Path.Combine(Directory.GetCurrentDirectory(), "ExampleCsproj.txt"));
         }
     }
 }

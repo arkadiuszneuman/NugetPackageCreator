@@ -4,7 +4,7 @@ using System.Xml.Linq;
 
 namespace NugetTest.NuspecCreator.CsprojFileFinder.AssemblyNameFinder
 {
-    public class Cl_AssemblyNameFinder
+    public class Cl_AssemblyNameFinder : I_AssemblyNameFinder
     {
         public string GetAssemblyName(string vrpCsprojText)
         {

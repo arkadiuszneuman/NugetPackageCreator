@@ -3,7 +3,7 @@ using System.IO;
 using System.Text;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using NugetTest.NuspecCreator.CsprojFileFinder;
-using NugetTest.NuspecCreator.CsprojFileFinder.FileTextFinder;
+using NugetTest.NuspecCreator.FileTextLoader;
 using NugetTest.NuspecCreator.NuspecXmlCreator;
 
 namespace NugetCreatorTest
@@ -37,7 +37,7 @@ namespace NugetCreatorTest
 
         private string GetValidNuspec()
         {
-            return new Cl_FileTextFinder().GetTextFromFile(Path.Combine(Directory.GetCurrentDirectory(), "ExampleNuspecFile.txt"));
+            return new Cl_FileTextLoader().GetTextFromFile(Path.Combine(Directory.GetCurrentDirectory(), "ExampleNuspecFile.txt"));
         }
 
         [TestMethod]

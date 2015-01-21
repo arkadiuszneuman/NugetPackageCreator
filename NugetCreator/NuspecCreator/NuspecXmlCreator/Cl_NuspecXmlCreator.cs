@@ -4,7 +4,7 @@ using NugetTest.NuspecCreator.CsprojFileFinder;
 
 namespace NugetTest.NuspecCreator.NuspecXmlCreator
 {
-    public class Cl_NuspecXmlCreator
+    public class Cl_NuspecXmlCreator : I_NuspecXmlCreator
     {
         public string CreateNuspecText(Cl_NuspecProjectInfo vrpNuspecProjectInfo)
         {
@@ -53,7 +53,7 @@ namespace NugetTest.NuspecCreator.NuspecXmlCreator
             {
                 vrlElement.Add(new XElement(vrpNamespace + "dependency", 
                     new XAttribute("id", vrlProjectReference.Name),
-                    new XAttribute("version", '[' + vrlProjectReference.Version + ']')));
+                    new XAttribute("version",  vrlProjectReference.Version)));
             }
 
             foreach (Cl_ProjectInfo vrlProjectReference in vrpNuspecProjectInfo.AddionalPackages)

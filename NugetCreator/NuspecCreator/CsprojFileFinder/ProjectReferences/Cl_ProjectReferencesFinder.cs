@@ -5,7 +5,7 @@ using System.Xml.Linq;
 
 namespace NugetTest.NuspecCreator.CsprojFileFinder.ProjectReferences
 {
-    public class Cl_ProjectReferencesFinder
+    public class Cl_ProjectReferencesFinder : I_ProjectReferencesFinder
     {
         public IEnumerable<Cl_ProjectInfo> GetProjectReferences(string vrpCsprojText)
         {

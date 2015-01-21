@@ -57,23 +57,33 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="NuspecCreator\Cl_NuspecCreator.cs" />
     <Compile Include="NuspecCreator\CsprojFileFinder\AssemblyNameFinder\Cl_AssemblyNameFinder.cs" />
-    <Compile Include="NuspecCreator\CsprojFileFinder\FileTextFinder\Cl_FileTextFinder.cs" />
+    <Compile Include="NuspecCreator\CsprojFileFinder\AssemblyNameFinder\I_AssemblyNameFinder.cs" />
+    <Compile Include="NuspecCreator\CsprojFileFinder\VersionFinder\Cl_VersionFinder.cs" />
+    <Compile Include="NuspecCreator\CsprojFileFinder\VersionFinder\I_VersionFinder.cs" />
+    <Compile Include="NuspecCreator\FileTextLoader\Cl_FileTextLoader.cs" />
     <Compile Include="NuspecCreator\CsprojFileFinder\Cl_ProjectInfo.cs" />
+    <Compile Include="NuspecCreator\FileTextLoader\I_FileTextLoader.cs" />
     <Compile Include="NuspecCreator\CsprojFileFinder\PackagesFinder\Cl_PackagesFinder.cs" />
+    <Compile Include="NuspecCreator\CsprojFileFinder\PackagesFinder\I_PackagesFinder.cs" />
     <Compile Include="NuspecCreator\CsprojFileFinder\ProjectReferences\Cl_ProjectReferencesFinder.cs" />
-    <Compile Include="Form1.cs">
+    <Compile Include="Frm_MainForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="Frm_MainForm.Designer.cs">
+      <DependentUpon>Frm_MainForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="NuspecCreator\CsprojFileFinder\ProjectReferences\I_ProjectReferencesFinder.cs" />
+    <Compile Include="NuspecCreator\FileTextSaver\Cl_FileTextSaver.cs" />
+    <Compile Include="NuspecCreator\FileTextSaver\I_FileTextSaver.cs" />
     <Compile Include="NuspecCreator\NuspecXmlCreator\Cl_NuspecXmlCreator.cs" />
     <Compile Include="NuspecCreator\NuspecXmlCreator\Cl_NuspecProjectInfo.cs" />
+    <Compile Include="NuspecCreator\NuspecXmlCreator\I_NuspecXmlCreator.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Form1.resx">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <EmbeddedResource Include="Frm_MainForm.resx">
+      <DependentUpon>Frm_MainForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\licenses.licx" />
     <EmbeddedResource Include="Properties\Resources.resx">

@@ -15,7 +15,7 @@ namespace NugetCreatorTest
 
             string vrlAssemblyName = vrlAssemblyNameFinder.GetAssemblyName(new TextGetter().GetCsprojText());
 
-            Assert.AreEqual("inSolutions.Utilities.1.0.1.8", vrlAssemblyName);
+            Assert.AreEqual("inSolutions.Utilities", vrlAssemblyName);
         }
     }
 }

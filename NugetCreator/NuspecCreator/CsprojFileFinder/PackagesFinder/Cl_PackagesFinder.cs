@@ -5,7 +5,7 @@ using System.Xml.Linq;
 
 namespace NugetTest.NuspecCreator.CsprojFileFinder.PackagesFinder
 {
-    public class Cl_PackagesFinder
+    public class Cl_PackagesFinder : I_PackagesFinder
     {
         public IEnumerable<Cl_ProjectInfo> GetPackages(string vrpCsprojText)
         {
