@@ -57,6 +57,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CsprojDllGetter\Cl_CsprojDllGetter.cs" />
+    <Compile Include="CsprojDllGetter\I_CsprojDllGetter.cs" />
     <Compile Include="NuspecCreator\Cl_NuspecCreator.cs" />
     <Compile Include="NuspecCreator\CsprojFileFinder\AssemblyNameFinder\Cl_AssemblyNameFinder.cs" />
     <Compile Include="NuspecCreator\CsprojFileFinder\AssemblyNameFinder\I_AssemblyNameFinder.cs" />

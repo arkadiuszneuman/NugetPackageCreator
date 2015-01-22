@@ -1,5 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.IO;
+using System.Linq;
+using NugetTest.CsprojDllGetter;
 using NugetTest.NuspecCreator.CsprojFileFinder;
 using NugetTest.NuspecCreator.CsprojFileFinder.AssemblyNameFinder;
 using NugetTest.NuspecCreator.CsprojFileFinder.PackagesFinder;
@@ -20,9 +22,10 @@ namespace NugetTest.NuspecCreator
         private readonly I_NuspecXmlCreator vrcNuspecXmlCreator;
         private readonly I_FileTextSaver vrcFileTextSaver;
         private readonly I_VersionFinder vrcVersionFinder;
+        private readonly I_CsprojDllGetter vrcCsprojDllGetter;
 
         public Cl_NuspecCreator(I_AssemblyNameFinder vrpAssemblyNameFinder, I_FileTextLoader vrpFileTextLoader, I_PackagesFinder vrpPackagesFinder,
-            I_ProjectReferencesFinder vrpProjectReferencesFinder, I_NuspecXmlCreator vrpNuspecXmlCreator, I_FileTextSaver vrpFileTextSaver, I_VersionFinder vrpVersionFinder)
+            I_ProjectReferencesFinder vrpProjectReferencesFinder, I_NuspecXmlCreator vrpNuspecXmlCreator, I_FileTextSaver vrpFileTextSaver, I_VersionFinder vrpVersionFinder, I_CsprojDllGetter vrpCsprojDllGetter)
         {
             vrcAssemblyNameFinder = vrpAssemblyNameFinder;
             vrcFileTextLoader = vrpFileTextLoader;
@@ -31,21 +34,24 @@ namespace NugetTest.NuspecCreator
             vrcNuspecXmlCreator = vrpNuspecXmlCreator;
             vrcFileTextSaver = vrpFileTextSaver;
             vrcVersionFinder = vrpVersionFinder;
+            vrcCsprojDllGetter = vrpCsprojDllGetter;
         }
 
-        public void CreateAndSaveNuspec(string vrpFilePath)
+        public string CreateAndSaveNuspec(string vrpFilePath)
         {
             Cl_NuspecProjectInfo vrlNuspecProjectInfo = CreateNuspecProjectInfo(vrpFilePath);
-            SaveNuspecFile(vrpFilePath, vrlNuspecProjectInfo);
+            return SaveNuspecFile(vrpFilePath, vrlNuspecProjectInfo);
         }
 
-        private void SaveNuspecFile(string vrpFilePath, Cl_NuspecProjectInfo vrpNuspecProjectInfo)
+        private string SaveNuspecFile(string vrpFilePath, Cl_NuspecProjectInfo vrpNuspecProjectInfo)
         {
-            string vrlFileName = Path.GetFileNameWithoutExtension(vrpFilePath) + ".nuspec";
-            string vrlDir = Path.GetDirectoryName(vrpFilePath) + @"\bin\Release";
+            string vrlDllDirectory = vrcCsprojDllGetter.GetDllDirectoryFromCsproj(vrpFilePath);
+            string vrlFileName = Path.Combine(vrlDllDirectory, Path.GetFileNameWithoutExtension(vrpFilePath) + "." + vrpNuspecProjectInfo.Version + ".nuspec");
 
             string vrlNuspecText = vrcNuspecXmlCreator.CreateNuspecText(vrpNuspecProjectInfo);
-            vrcFileTextSaver.SaveText(Path.Combine(vrlDir, vrlFileName), vrlNuspecText);
+            vrcFileTextSaver.SaveText(vrlFileName, vrlNuspecText);
+
+            return vrlFileName;
         }
 
         private Cl_NuspecProjectInfo CreateNuspecProjectInfo(string vrpFilePath)
@@ -55,8 +61,13 @@ namespace NugetTest.NuspecCreator
             string vrlAssemblyName = vrcAssemblyNameFinder.GetAssemblyName(vrlTextFromFile);
             string vrlVersion = vrcVersionFinder.GetVersion(vrpFilePath, vrlAssemblyName);
             vrlAssemblyName = vrlAssemblyName.Replace('.' + vrlVersion, "");
-            IEnumerable<Cl_ProjectInfo> vrlPackages = vrcPackagesFinder.GetPackages(vrlTextFromFile);
-            IEnumerable<Cl_ProjectInfo> vrlProjectReferences = vrcProjectReferencesFinder.GetProjectReferences(vrlTextFromFile);
+            IEnumerable<Cl_ProjectInfo> vrlPackages = vrcPackagesFinder.GetPackages(vrlTextFromFile).ToList();
+            IEnumerable<Cl_ProjectInfo> vrlProjectReferences = vrcProjectReferencesFinder.GetProjectReferences(vrlTextFromFile).ToList();
+
+            foreach (Cl_ProjectInfo vrlProjectReference in vrlProjectReferences)
+            {
+                vrlProjectReference.Version = '[' + vrlVersion + ']'; //ustawienie wersji programu dokładnie na taką samą jak wersja aktualnej dll'ki
+            }
 
             return new Cl_NuspecProjectInfo()
             {

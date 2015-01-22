@@ -9,6 +9,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using DevExpress.XtraEditors;
+using NugetTest.CsprojDllGetter;
 using NugetTest.NuspecCreator;
 using NugetTest.NuspecCreator.CsprojFileFinder.AssemblyNameFinder;
 using NugetTest.NuspecCreator.CsprojFileFinder.PackagesFinder;
@@ -27,7 +29,6 @@ namespace NugetTest
         public Frm_MainForm()
         {
             InitializeComponent();
-
         }
 
         private IEnumerable<string> FindCsProjs()
@@ -37,36 +38,72 @@ namespace NugetTest
             return Directory.GetFiles(vrlDir, "*.csproj", SearchOption.AllDirectories);
         }
 
+        private IEnumerable<string> GetDisabledProjects()
+        {
+            yield return "AppFrameExamples";
+            yield return "AppFrameExamplesCommon";
+            yield return "AppFrameInHubTest";
+            yield return "AppFrameTest";
+            yield return "inHub";
+            yield return "inHubMain";
+            yield return "inHubNavireo";
+            yield return "Main";
+            yield return "MainNav";
+        }
+
         public void Test()
         {
             lines.Clear();
 
-            foreach (string vrlLine in FindCsProjs())
+            foreach (string vrlLine in FindCsProjs().Where(p => !GetDisabledProjects().Contains(Path.GetFileNameWithoutExtension(p))))
             {
-                Cl_NuspecCreator vrlNuspecCreator = new Cl_NuspecCreator(new Cl_AssemblyNameFinder(), new Cl_FileTextLoader(), new Cl_PackagesFinder(),
-                    new Cl_ProjectReferencesFinder(), new Cl_NuspecXmlCreator(), new Cl_FileTextSaver(), new Cl_VersionFinder());
+                try
+                {
+                    Cl_NuspecCreator vrlNuspecCreator = new Cl_NuspecCreator(new Cl_AssemblyNameFinder(), new Cl_FileTextLoader(), new Cl_PackagesFinder(),
+                        new Cl_ProjectReferencesFinder(), new Cl_NuspecXmlCreator(), new Cl_FileTextSaver(), new Cl_VersionFinder(new Cl_CsprojDllGetter()), new Cl_CsprojDllGetter());
 
-                vrlNuspecCreator.CreateAndSaveNuspec(vrlLine);
+                    string vrlNuspecFile = vrlNuspecCreator.CreateAndSaveNuspec(vrlLine);
 
-                //var process = new Process
-                //{
-                //    StartInfo = new ProcessStartInfo
-                //    {
-                //        FileName = "nuget.exe",
-                //        Arguments = @"pack D:\Praca\inSolutions\Projekty\SzkieletAplikacji\ApplicationFrame-Evaluation\inSolutions.Utilities\bin\Release\inSolutions.Utilities.1.0.1.8.dll.nuspec -OutputDirectory " + frtxtOutputDirectory.Text,
-                //        UseShellExecute = false,
-                //        RedirectStandardOutput = true,
-                //        CreateNoWindow = true
-                //    }
-                //};
+                    if (!File.Exists(vrlNuspecFile))
+                    {
+                        throw new InvalidOperationException(vrlNuspecFile + ": Brak pliku NuSpec");
+                    }
 
-                //process.Start();
-                //while (!process.StandardOutput.EndOfStream)
-                //{
-                //    string line = process.StandardOutput.ReadLine();
-                //    lines.Add(line);
-                //    memoEdit1.Lines = lines.ToArray();
-                //}
+                    if (!File.Exists(Path.Combine(Path.GetDirectoryName(vrlNuspecFile), Path.GetFileNameWithoutExtension(vrlNuspecFile) + ".dll")))
+                    {
+                        throw new InvalidOperationException(vrlNuspecFile + ": Brak pliku dll");
+                    }
+
+                    if (!File.Exists(Path.Combine(Path.GetDirectoryName(vrlNuspecFile), Path.GetFileNameWithoutExtension(vrlNuspecFile) + ".xml")))
+                    {
+                        throw new InvalidOperationException(vrlNuspecFile + ": Brak pliku dokumentacji (xml)");
+                    }
+
+                    var process = new Process
+                    {
+                        StartInfo = new ProcessStartInfo
+                        {
+                            FileName = "nuget.exe",
+                            Arguments = @"pack " + vrlNuspecFile + " -OutputDirectory " + frtxtOutputDirectory.Text,
+                            UseShellExecute = false,
+                            RedirectStandardOutput = true,
+                            CreateNoWindow = true
+                        }
+                    };
+
+                    process.Start();
+                    while (!process.StandardOutput.EndOfStream)
+                    {
+                        string line = process.StandardOutput.ReadLine();
+                        lines.Add(line);
+                        memoEdit1.Lines = lines.ToArray();
+                    }
+                    process.Dispose();
+                }
+                catch (Exception vrlException)
+                {
+                    XtraMessageBox.Show(vrlException.Message, "Błąd", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+                }
             }
         }
 
