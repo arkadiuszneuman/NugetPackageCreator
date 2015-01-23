@@ -15,6 +15,7 @@ namespace NugetTest.NuspecCreator
 {
     public class Cl_NuspecCreator
     {
+        private readonly I_PreleaseInfo vrcPreleaseInfo;
         private readonly I_AssemblyNameFinder vrcAssemblyNameFinder;
         private readonly I_FileTextLoader vrcFileTextLoader;
         private readonly I_PackagesFinder vrcPackagesFinder;
@@ -24,9 +25,10 @@ namespace NugetTest.NuspecCreator
         private readonly I_VersionFinder vrcVersionFinder;
         private readonly I_CsprojDllGetter vrcCsprojDllGetter;
 
-        public Cl_NuspecCreator(I_AssemblyNameFinder vrpAssemblyNameFinder, I_FileTextLoader vrpFileTextLoader, I_PackagesFinder vrpPackagesFinder,
+        public Cl_NuspecCreator(I_PreleaseInfo vrpPreleaseInfo, I_AssemblyNameFinder vrpAssemblyNameFinder, I_FileTextLoader vrpFileTextLoader, I_PackagesFinder vrpPackagesFinder,
             I_ProjectReferencesFinder vrpProjectReferencesFinder, I_NuspecXmlCreator vrpNuspecXmlCreator, I_FileTextSaver vrpFileTextSaver, I_VersionFinder vrpVersionFinder, I_CsprojDllGetter vrpCsprojDllGetter)
         {
+            vrcPreleaseInfo = vrpPreleaseInfo;
             vrcAssemblyNameFinder = vrpAssemblyNameFinder;
             vrcFileTextLoader = vrpFileTextLoader;
             vrcPackagesFinder = vrpPackagesFinder;
@@ -46,7 +48,7 @@ namespace NugetTest.NuspecCreator
         private string SaveNuspecFile(string vrpFilePath, Cl_NuspecProjectInfo vrpNuspecProjectInfo)
         {
             string vrlDllDirectory = vrcCsprojDllGetter.GetDllDirectoryFromCsproj(vrpFilePath);
-            string vrlFileName = Path.Combine(vrlDllDirectory, Path.GetFileNameWithoutExtension(vrpFilePath) + "." + vrpNuspecProjectInfo.Version + ".nuspec");
+            string vrlFileName = Path.Combine(vrlDllDirectory, Path.GetFileNameWithoutExtension(vrpFilePath) + "." + vrpNuspecProjectInfo.NugetVersion + ".nuspec");
 
             string vrlNuspecText = vrcNuspecXmlCreator.CreateNuspecText(vrpNuspecProjectInfo);
             vrcFileTextSaver.SaveText(vrlFileName, vrlNuspecText);
@@ -63,16 +65,23 @@ namespace NugetTest.NuspecCreator
             vrlAssemblyName = vrlAssemblyName.Replace('.' + vrlVersion, "");
             IEnumerable<Cl_ProjectInfo> vrlPackages = vrcPackagesFinder.GetPackages(vrlTextFromFile).ToList();
             IEnumerable<Cl_ProjectInfo> vrlProjectReferences = vrcProjectReferencesFinder.GetProjectReferences(vrlTextFromFile).ToList();
+            string vrlFullVersionName = vrlVersion;
+
+            if (vrcPreleaseInfo.IsPrerelease)
+            {
+                vrlFullVersionName += "-" + vrcPreleaseInfo.PrereleaseText;
+            }
 
             foreach (Cl_ProjectInfo vrlProjectReference in vrlProjectReferences)
             {
-                vrlProjectReference.Version = '[' + vrlVersion + ']'; //ustawienie wersji programu dokładnie na taką samą jak wersja aktualnej dll'ki
+                vrlProjectReference.Version = '[' + vrlFullVersionName + ']'; //ustawienie wersji programu dokładnie na taką samą jak wersja aktualnej dll'ki
             }
 
             return new Cl_NuspecProjectInfo()
             {
                 ApplicationId = vrlAssemblyName,
-                Version = vrlVersion,
+                NugetVersion = vrlFullVersionName,
+                FileVersion = vrlVersion,
                 Authors = "Arkadiusz Neuman",
                 Description = "Szkielet Aplikacji dla programów firmy inSolutions.",
                 Title = "Szkielet Aplikacji - " + vrlAssemblyName.Replace("inSolutions.", ""),

@@ -15,7 +15,7 @@ namespace NugetTest.NuspecCreator.NuspecXmlCreator
                 new XElement(vrlNamespace + "package",
                     new XElement(vrlNamespace + "metadata",
                         new XElement(vrlNamespace + "id", vrpNuspecProjectInfo.ApplicationId),
-                        new XElement(vrlNamespace + "version", vrpNuspecProjectInfo.Version),
+                        new XElement(vrlNamespace + "version", vrpNuspecProjectInfo.NugetVersion),
                         new XElement(vrlNamespace + "title", vrpNuspecProjectInfo.Title),
                         new XElement(vrlNamespace + "authors", vrpNuspecProjectInfo.Authors),
                         new XElement(vrlNamespace + "requireLicenseAcceptance", "false"),
@@ -26,11 +26,11 @@ namespace NugetTest.NuspecCreator.NuspecXmlCreator
                     ),
                     new XElement(vrlNamespace + "files",
                         new XElement(vrlNamespace + "file",
-                            new XAttribute("src", vrpNuspecProjectInfo.ApplicationId + '.' + vrpNuspecProjectInfo.Version + ".dll"),
-                            new XAttribute("target", @"lib\net40\" + vrpNuspecProjectInfo.ApplicationId + '.' + vrpNuspecProjectInfo.Version + ".dll")),
+                            new XAttribute("src", vrpNuspecProjectInfo.ApplicationId + '.' + vrpNuspecProjectInfo.FileVersion + ".dll"),
+                            new XAttribute("target", @"lib\net40\" + vrpNuspecProjectInfo.ApplicationId + '.' + vrpNuspecProjectInfo.FileVersion + ".dll")),
                         new XElement(vrlNamespace + "file",
-                            new XAttribute("src", vrpNuspecProjectInfo.ApplicationId + '.' + vrpNuspecProjectInfo.Version + ".xml"),
-                            new XAttribute("target", @"lib\net40\" + vrpNuspecProjectInfo.ApplicationId + '.' + vrpNuspecProjectInfo.Version + ".xml")))
+                            new XAttribute("src", vrpNuspecProjectInfo.ApplicationId + '.' + vrpNuspecProjectInfo.FileVersion + ".xml"),
+                            new XAttribute("target", @"lib\net40\" + vrpNuspecProjectInfo.ApplicationId + '.' + vrpNuspecProjectInfo.FileVersion + ".xml")))
                 )
             );
 

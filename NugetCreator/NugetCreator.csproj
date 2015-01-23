@@ -62,6 +62,7 @@
     <Compile Include="NuspecCreator\Cl_NuspecCreator.cs" />
     <Compile Include="NuspecCreator\CsprojFileFinder\AssemblyNameFinder\Cl_AssemblyNameFinder.cs" />
     <Compile Include="NuspecCreator\CsprojFileFinder\AssemblyNameFinder\I_AssemblyNameFinder.cs" />
+    <Compile Include="NuspecCreator\CsprojFileFinder\I_PreleaseInfo.cs" />
     <Compile Include="NuspecCreator\CsprojFileFinder\VersionFinder\Cl_VersionFinder.cs" />
     <Compile Include="NuspecCreator\CsprojFileFinder\VersionFinder\I_VersionFinder.cs" />
     <Compile Include="NuspecCreator\FileTextLoader\Cl_FileTextLoader.cs" />

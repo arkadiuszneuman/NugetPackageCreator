@@ -16,7 +16,7 @@ namespace NugetCreatorTest
             var vrlProjectInfo = new Cl_NuspecProjectInfo();
 
             vrlProjectInfo.ApplicationId = "inSolutions.Utilities";
-            vrlProjectInfo.Version = "1.0.1.8";
+            vrlProjectInfo.NugetVersion = "1.0.1.8";
             vrlProjectInfo.Authors = "Arkadiusz Neuman";
             vrlProjectInfo.Description = "Szkielet Aplikacji dla programów firmy inSolutions.";
             vrlProjectInfo.Title = "Szkielet Aplikacji - Utilities";
