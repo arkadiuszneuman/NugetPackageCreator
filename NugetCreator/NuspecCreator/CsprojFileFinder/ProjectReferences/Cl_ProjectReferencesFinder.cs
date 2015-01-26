@@ -12,7 +12,8 @@ namespace NugetTest.NuspecCreator.CsprojFileFinder.ProjectReferences
             XElement vrlRoot = XElement.Load(new StringReader(vrpCsprojText));
             foreach (var vrlProjectReference in vrlRoot.Elements().Where(el => el.Name.LocalName == "ItemGroup").SelectMany(e => e.Elements()).Where(r => r.Name.LocalName == "ProjectReference"))
             {
-                yield return new Cl_ProjectInfo(vrlProjectReference.Elements().Single(e => e.Name.LocalName == "Name").Value);
+                string vrlDependencyName = vrlProjectReference.Elements().Single(e => e.Name.LocalName == "Name").Value;
+                yield return new Cl_ProjectInfo(vrlDependencyName);
             }
         }
     }

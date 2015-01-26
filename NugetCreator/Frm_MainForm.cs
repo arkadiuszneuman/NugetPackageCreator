@@ -101,6 +101,11 @@ namespace NugetTest
                         Directory.CreateDirectory(vrlOutputDirectory);
                     }
 
+                    if (File.Exists(Path.Combine(vrlOutputDirectory, Path.GetFileNameWithoutExtension(vrlNuspecFile) + ".nupkg")))
+                    {
+                        throw new InvalidOperationException("Wybrana wersja pliku już istnieje");
+                    }
+
                     var process = new Process
                     {
                         StartInfo = new ProcessStartInfo
@@ -124,7 +129,7 @@ namespace NugetTest
                 }
                 catch (Exception vrlException)
                 {
-                    XtraMessageBox.Show(vrlException.Message, "Błąd", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+                    XtraMessageBox.Show(vrlException.Message, "Błąd", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 }
                 finally
                 {

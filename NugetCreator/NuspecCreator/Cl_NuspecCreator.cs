@@ -65,6 +65,7 @@ namespace NugetTest.NuspecCreator
             vrlAssemblyName = vrlAssemblyName.Replace('.' + vrlVersion, "");
             IEnumerable<Cl_ProjectInfo> vrlPackages = vrcPackagesFinder.GetPackages(vrlTextFromFile).ToList();
             IEnumerable<Cl_ProjectInfo> vrlProjectReferences = vrcProjectReferencesFinder.GetProjectReferences(vrlTextFromFile).ToList();
+
             string vrlFullVersionName = vrlVersion;
 
             if (vrcPreleaseInfo.IsPrerelease)

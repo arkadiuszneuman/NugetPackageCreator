@@ -18,13 +18,17 @@ namespace NugetTest.NuspecCreator.CsprojFileFinder.VersionFinder
 
         public String GetVersion(string vrpCsprojFile, string vrpAssemblyName)
         {
-            string vrlDllFileFromCsproj = vrcCsprojDllGetter.GetDllDirectoryFromCsproj(vrpCsprojFile);
+            //string vrlDllFileFromCsproj = vrcCsprojDllGetter.GetDllDirectoryFromCsproj(vrpCsprojFile);
 
-            string vrlPath = Path.Combine(vrlDllFileFromCsproj, vrpAssemblyName + ".dll");
-            Assembly vrlAssembly = Assembly.LoadFile(vrlPath);
-            Version vrlVersion = vrlAssembly.GetName().Version;
+            //string vrlPath = Path.Combine(vrlDllFileFromCsproj, vrpAssemblyName + ".dll");
+            //Assembly vrlAssembly = Assembly.LoadFile(vrlPath);
+            //Version vrlVersion = vrlAssembly.GetName().Version;
 
-            return vrlVersion.ToString();
+            //return vrlVersion.ToString();
+
+            string vrlAssemblyNameWithoutVersion = Path.GetFileNameWithoutExtension(vrpCsprojFile);
+
+            return vrpAssemblyName.Replace(vrlAssemblyNameWithoutVersion + '.', "");
         }
     }
 }
