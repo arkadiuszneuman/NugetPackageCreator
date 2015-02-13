@@ -14,7 +14,7 @@ namespace NugetTest.NuspecCreator.CsprojFileFinder.PackagesFinder
             {
                 string vrlReferenceName = vrlReferenceInclude.Attribute("Include").Value.Split(',').First();
 
-                if (!vrlReferenceName.StartsWith("InsERT."))
+                if (!vrlReferenceName.StartsWith("InsERT.") && !vrlReferenceName.StartsWith("EntityFramework.SqlServer"))
                 {
                     XElement vrlHintPath = vrlReferenceInclude.Elements().Single(e => e.Name.LocalName == "HintPath");
                     string vrlPath = vrlHintPath.Value;
