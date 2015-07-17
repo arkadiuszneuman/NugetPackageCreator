@@ -17,12 +17,13 @@ namespace NugetCreatorTest
 
             vrlProjectInfo.ApplicationId = "inSolutions.Utilities";
             vrlProjectInfo.NugetVersion = "1.0.1.8";
+            vrlProjectInfo.FileVersion = "2.0.1.8";
             vrlProjectInfo.Authors = "Arkadiusz Neuman";
             vrlProjectInfo.Description = "Szkielet Aplikacji dla programów firmy inSolutions.";
             vrlProjectInfo.Title = "Szkielet Aplikacji - Utilities";
             
             List<Cl_ProjectInfo> vrlProjectReferences = new List<Cl_ProjectInfo>();
-            vrlProjectReferences.Add(new Cl_ProjectInfo("ApplicationFrameSystemInterfaces", "1.0.1.8"));
+            vrlProjectReferences.Add(new Cl_ProjectInfo("ApplicationFrameSystemInterfaces", "3.0.1.8"));
 
             List<Cl_ProjectInfo> vrlProjectPackages = new List<Cl_ProjectInfo>();
             vrlProjectPackages.Add(new Cl_ProjectInfo("NLog", "3.2.0.0"));

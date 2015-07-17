@@ -76,7 +76,7 @@
             // 
             this.frtxtOutputDirectory.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.frtxtOutputDirectory.EditValue = "\\\\192.168.255.21\\Wymiana\\ArekN\\NuGet";
+            this.frtxtOutputDirectory.EditValue = "\\\\192.168.255.21\\Wspólny\\NuGet";
             this.frtxtOutputDirectory.Location = new System.Drawing.Point(108, 44);
             this.frtxtOutputDirectory.Name = "frtxtOutputDirectory";
             this.frtxtOutputDirectory.Size = new System.Drawing.Size(712, 20);

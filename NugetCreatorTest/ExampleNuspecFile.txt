@@ -10,15 +10,15 @@
         <language />
         <dependencies>
             <group targetFramework=".NETFramework4.0">
-                <dependency id="ApplicationFrameSystemInterfaces" version="[1.0.1.8]" />
-                <dependency id="NLog" version="3.2.0.0" />
-                <dependency id="FluentMigrator" version="1.4.0.0" />
-                <dependency id="FluentMigrator.Runner" version="1.4.0.0" />
+                <dependency id="ApplicationFrameSystemInterfaces" version="[3.0.1.8]" />
+                <dependency id="NLog" version="[3.2.0.0]" />
+                <dependency id="FluentMigrator" version="[1.4.0.0]" />
+                <dependency id="FluentMigrator.Runner" version="[1.4.0.0]" />
             </group>
         </dependencies>
     </metadata>
     <files>
-        <file src="inSolutions.Utilities.1.0.1.8.dll" target="lib\net40\inSolutions.Utilities.1.0.1.8.dll" />
-        <file src="inSolutions.Utilities.1.0.1.8.xml" target="lib\net40\inSolutions.Utilities.1.0.1.8.xml" />
+        <file src="inSolutions.Utilities.2.0.1.8.dll" target="lib\net40\inSolutions.Utilities.2.0.1.8.dll" />
+        <file src="inSolutions.Utilities.2.0.1.8.xml" target="lib\net40\inSolutions.Utilities.2.0.1.8.xml" />
     </files>
 </package>
