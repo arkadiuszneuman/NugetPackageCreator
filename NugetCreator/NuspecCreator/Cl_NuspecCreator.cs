@@ -75,7 +75,7 @@ namespace NugetTest.NuspecCreator
 
             foreach (Cl_ProjectInfo vrlProjectReference in vrlProjectReferences)
             {
-                vrlProjectReference.Version = '[' + vrlFullVersionName + ']'; //ustawienie wersji programu dokładnie na taką samą jak wersja aktualnej dll'ki
+                vrlProjectReference.Version = vrlFullVersionName; //ustawienie wersji programu dokładnie na taką samą jak wersja aktualnej dll'ki
             }
 
             return new Cl_NuspecProjectInfo()

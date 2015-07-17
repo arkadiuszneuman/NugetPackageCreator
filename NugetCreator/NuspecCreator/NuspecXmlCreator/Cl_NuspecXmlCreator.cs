@@ -53,14 +53,14 @@ namespace NugetTest.NuspecCreator.NuspecXmlCreator
             {
                 vrlElement.Add(new XElement(vrpNamespace + "dependency", 
                     new XAttribute("id", vrlProjectReference.Name),
-                    new XAttribute("version",  vrlProjectReference.Version)));
+                    new XAttribute("version",  "[" + vrlProjectReference.Version + "]")));
             }
 
             foreach (Cl_ProjectInfo vrlProjectReference in vrpNuspecProjectInfo.AddionalPackages)
             {
                 vrlElement.Add(new XElement(vrpNamespace + "dependency",
                     new XAttribute("id", vrlProjectReference.Name),
-                    new XAttribute("version", vrlProjectReference.Version)));
+                    new XAttribute("version", "[" + vrlProjectReference.Version + "]")));
             }
             
             return vrlElement;
