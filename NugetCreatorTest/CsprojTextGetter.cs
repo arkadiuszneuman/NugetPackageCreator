@@ -7,7 +7,7 @@ namespace NugetCreatorTest
     {
         public string GetCsprojText()
         {
-            return new Cl_FileTextLoader().GetTextFromFile(Path.Combine(Directory.GetCurrentDirectory(), "ExampleCsproj.txt"));
+            return new Cl_FileTextLoader().GetTextFromFile(Path.Combine(Directory.GetCurrentDirectory(), "ExampleCsproj.xml"));
         }
     }
 }

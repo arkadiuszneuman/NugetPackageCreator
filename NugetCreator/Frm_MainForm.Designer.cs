@@ -62,7 +62,6 @@
             this.memoEdit1.Name = "memoEdit1";
             this.memoEdit1.Size = new System.Drawing.Size(808, 272);
             this.memoEdit1.TabIndex = 1;
-            this.memoEdit1.UseOptimizedRendering = true;
             // 
             // labelControl1
             // 
@@ -86,8 +85,8 @@
             // 
             this.frtxtSlnPath.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.frtxtSlnPath.EditValue = "D:\\Praca\\inSolutions\\Projekty\\SzkieletAplikacji\\ApplicationFrame-Evaluation\\Appli" +
-    "cationFrame.sln";
+            this.frtxtSlnPath.EditValue = "D:\\Praca\\inSolutions\\Projekty\\ApplicationFrame\\ApplicationFrame-Evaluation\\Applic" +
+    "ationFrame.sln";
             this.frtxtSlnPath.Location = new System.Drawing.Point(108, 9);
             this.frtxtSlnPath.Name = "frtxtSlnPath";
             this.frtxtSlnPath.Size = new System.Drawing.Size(712, 20);

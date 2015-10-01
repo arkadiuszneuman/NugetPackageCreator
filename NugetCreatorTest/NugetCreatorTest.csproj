@@ -64,8 +64,9 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="ExampleCsproj.txt">
+    <Content Include="ExampleCsproj.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <SubType>Designer</SubType>
     </Content>
     <Content Include="ExampleNuspecFile.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>

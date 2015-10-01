@@ -14,16 +14,24 @@ namespace NugetTest.NuspecCreator.CsprojFileFinder.PackagesFinder
             {
                 string vrlReferenceName = vrlReferenceInclude.Attribute("Include").Value.Split(',').First();
 
-                if (!vrlReferenceName.StartsWith("InsERT.") && !vrlReferenceName.StartsWith("EntityFramework.SqlServer"))
+                XElement vrlPrivate = vrlReferenceInclude.Elements().SingleOrDefault(e => e.Name.LocalName == "Private");
+                if (vrlPrivate == null || vrlPrivate.Value.ToLower() == "false")
                 {
-                    XElement vrlHintPath = vrlReferenceInclude.Elements().Single(e => e.Name.LocalName == "HintPath");
-                    string vrlPath = vrlHintPath.Value;
-                    string vrlAssembyDir = vrlPath.Split('\\')[2];
-                    string vrlVersion = vrlAssembyDir.Replace(vrlReferenceName + '.', "");
+                    if (!vrlReferenceName.StartsWith("InsERT.") && !vrlReferenceName.StartsWith("EntityFramework.SqlServer"))
+                    {
+                        XElement vrlHintPath = vrlReferenceInclude.Elements().Single(e => e.Name.LocalName == "HintPath");
+                        string vrlPath = vrlHintPath.Value;
+                        string vrlAssembyDir = vrlPath.Split('\\')[2];
+                        string vrlVersion = vrlAssembyDir.Replace(vrlReferenceName + '.', "");
 
-                    yield return new Cl_ProjectInfo(vrlReferenceName, vrlVersion);
+                        yield return new Cl_ProjectInfo(vrlReferenceName, vrlVersion);
+                    }
                 }
             }
+
+            yield return new Cl_ProjectInfo("Microsoft.Bcl", "1.1.10");
+            yield return new Cl_ProjectInfo("Microsoft.Bcl.Async", "1.0.168");
+            yield return new Cl_ProjectInfo("Microsoft.Bcl.Build", "1.0.21");
         }
     }
 }
