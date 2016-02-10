@@ -28,10 +28,6 @@ namespace NugetTest.NuspecCreator.CsprojFileFinder.PackagesFinder
                     }
                 }
             }
-
-            yield return new Cl_ProjectInfo("Microsoft.Bcl", "1.1.10");
-            yield return new Cl_ProjectInfo("Microsoft.Bcl.Async", "1.0.168");
-            yield return new Cl_ProjectInfo("Microsoft.Bcl.Build", "1.0.21");
         }
     }
 }
