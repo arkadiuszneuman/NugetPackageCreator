@@ -14,12 +14,11 @@ namespace NugetTest.NuspecCreator.CsprojFileFinder.PackagesFinder
             {
                 string vrlReferenceName = vrlReferenceInclude.Attribute("Include").Value.Split(',').First();
 
-                XElement vrlPrivate = vrlReferenceInclude.Elements().SingleOrDefault(e => e.Name.LocalName == "Private");
-                if (vrlPrivate == null || vrlPrivate.Value.ToLower() == "false")
+                XElement vrlHintPath = vrlReferenceInclude.Elements().SingleOrDefault(e => e.Name.LocalName == "HintPath");
+                if (vrlHintPath != null && vrlHintPath.Value.StartsWith(@"..\packages\"))
                 {
                     if (!vrlReferenceName.StartsWith("InsERT.") && !vrlReferenceName.StartsWith("EntityFramework.SqlServer"))
                     {
-                        XElement vrlHintPath = vrlReferenceInclude.Elements().Single(e => e.Name.LocalName == "HintPath");
                         string vrlPath = vrlHintPath.Value;
                         string vrlAssembyDir = vrlPath.Split('\\')[2];
                         string vrlVersion = vrlAssembyDir.Replace(vrlReferenceName + '.', "");

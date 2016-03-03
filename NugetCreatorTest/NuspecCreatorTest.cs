@@ -38,7 +38,7 @@ namespace NugetCreatorTest
 
         private string GetValidNuspec()
         {
-            return new Cl_FileTextLoader().GetTextFromFile(Path.Combine(Directory.GetCurrentDirectory(), "ExampleNuspecFile.txt"));
+            return new Cl_FileTextLoader().GetTextFromFile(Path.Combine(Directory.GetCurrentDirectory(), "ExampleNuspecFile.xml"));
         }
 
         [TestMethod]

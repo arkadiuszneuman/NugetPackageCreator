@@ -9,7 +9,7 @@
         <description>Szkielet Aplikacji dla programów firmy inSolutions.</description>
         <language />
         <dependencies>
-            <group targetFramework=".NETFramework4.0">
+            <group>
                 <dependency id="ApplicationFrameSystemInterfaces" version="[3.0.1.8]" />
                 <dependency id="NLog" version="[3.2.0.0]" />
                 <dependency id="FluentMigrator" version="[1.4.0.0]" />

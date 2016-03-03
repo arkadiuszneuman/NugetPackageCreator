@@ -37,12 +37,6 @@
     <Reference Include="DevExpress.Sparkline.v14.2.Core, Version=14.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.Utils.v14.2, Version=14.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.XtraEditors.v14.2, Version=14.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
-    <Reference Include="inSolutions.SystemInterfaces.1.0.1.8">
-      <HintPath>..\packages\ApplicationFrameSystemInterfaces.1.0.1.8\lib\net40\inSolutions.SystemInterfaces.1.0.1.8.dll</HintPath>
-    </Reference>
-    <Reference Include="inSolutions.Utilities.1.0.1.8">
-      <HintPath>..\packages\ApplicationFrameUtilities.1.0.1.8\lib\net40\inSolutions.Utilities.1.0.1.8.dll</HintPath>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Data.Linq" />

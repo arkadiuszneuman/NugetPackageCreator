@@ -46,8 +46,7 @@ namespace NugetTest.NuspecCreator.NuspecXmlCreator
 
         private XElement CreateGroupElement(XNamespace vrpNamespace, Cl_NuspecProjectInfo vrpNuspecProjectInfo)
         {
-            XElement vrlElement = new XElement(vrpNamespace + "group",
-                new XAttribute("targetFramework", ".NETFramework4.0"));
+            XElement vrlElement = new XElement(vrpNamespace + "group");
 
             foreach (Cl_ProjectInfo vrlProjectReference in vrpNuspecProjectInfo.ProjectReferences)
             {
